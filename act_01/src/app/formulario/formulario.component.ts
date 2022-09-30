@@ -10,6 +10,7 @@ export class FormularioComponent implements OnInit {
   icono='visibility_off'
   visibilidad="password"
 
+
   ngOnInit(): void {
   }
 
