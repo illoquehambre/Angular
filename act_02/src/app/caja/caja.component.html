@@ -1,6 +1,11 @@
-<header>
-
-    <h2>titulo</h2>
-    <mat-icon (click)="changeIcon()" aria-label="expansion" >{{icono}}</mat-icon>
+<header [ngClass]="expansion">
+    
+        <h2>titulo</h2>
+        <mat-icon class="icono" (click)="changeIcon()" aria-label="expansion" >{{icono}}</mat-icon>
+   
 </header>
-<main></main>
+<main [ngClass]="visibilidad">
+
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci veniam odit praesentium impedit corporis optio minus eius! Delectus ullam, perspiciatis veniam voluptatibus expedita dolorem cumque, laboriosam, odit consequuntur ipsa blanditiis?</p>
+
+</main>

@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class CajaComponent implements OnInit {
 
   icono="expand_more"
-  expansion=false
+  expansion='chico'
+  visibilidad="aparecer"
   constructor() { }
 
   ngOnInit(): void {
@@ -17,10 +18,12 @@ export class CajaComponent implements OnInit {
   changeIcon(){
     if(this.icono=='expand_more'){
       this.icono='expand_less'
-      this.expansion=true
+      this.expansion='grande'
+      this.visibilidad='desaparecer'
     }else{
       this.icono='expand_more'
-      this.expansion=false
+      this.expansion='chico'
+      this.visibilidad='aparecer'
     }
   }
 }

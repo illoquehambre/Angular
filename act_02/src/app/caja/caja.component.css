@@ -1,9 +1,35 @@
-page {
-    text-align: center;
+.icono{
+    font-size:22pt;
 }
 
-header{
+header, main{
+    
+    width: 50%;
     display: flex;
     border: red 1px solid;
-    width: 75%;
+    
+    align-items: top;
+    justify-content: space-between;
+
+    
+}
+
+.grande{
+    height: 500px;
+    font-size: 50pt;
+    width: 100%;
+}
+.chico{
+    height: 150px;
+    width: 50%;
+    font-size: 25pt;
+}
+
+.aparecer{
+    height: 200px;
+}
+.desaparecer{
+    height: 0px;
+    width: 0px;
+    font-size: 0;
 }
