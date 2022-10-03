@@ -4,11 +4,13 @@ import { MaterialImportsModule } from './Material-imports/material-imports.modul
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListadoProfesoresComponent } from './listado-profesores/listado-profesores.component';
+import { StudentsComponent } from './components/students/students.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListadoProfesoresComponent
+    ListadoProfesoresComponent,
+    StudentsComponent
   ],
   imports: [
     BrowserModule,

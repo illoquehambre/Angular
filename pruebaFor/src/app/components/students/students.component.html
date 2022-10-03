@@ -1,0 +1,19 @@
+<ol>
+    <li *ngFor="let student of studentList; ">
+       {{student.name}}, {{student.age}}
+
+    </li>
+</ol>
+
+<mat-list>
+  <div mat-subheader>Names</div>
+  <mat-list-item *ngFor="let student of studentList; index as id">
+    <mat-icon mat-list-icon>{{student.gender}}</mat-icon>
+    <div mat-line>{{student.name}}</div>
+    <div mat-line> {{student.age}} </div>
+   
+    <mat-icon mat-list-icon *ngIf="comprobarEdad(id)" >warning</mat-icon>
+   
+    
+  </mat-list-item>
+</mat-list>
