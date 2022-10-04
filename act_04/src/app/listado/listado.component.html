@@ -1,0 +1,16 @@
+
+<mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+
+<mat-list [dataSource]="dataSource">
+    <div mat-subheader>Names</div>
+    <mat-list-item class="flex" *ngFor="let student of studentList; index as id">
+      <div mat-line>{{student.name}}</div>
+      <div mat-line> {{student.age}} </div>
+     
+     
+      
+    </mat-list-item>
+  </mat-list>

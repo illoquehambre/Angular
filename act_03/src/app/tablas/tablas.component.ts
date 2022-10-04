@@ -21,6 +21,7 @@ export class TablasComponent implements OnInit {
     if(this.displayedColumns.includes(nmb)){
       debugger;
       var id = this.displayedColumns.indexOf(nmb)
+   
      
       this.displayedColumns.splice(id, 1)
     }else{
