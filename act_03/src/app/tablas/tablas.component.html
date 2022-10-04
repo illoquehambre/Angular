@@ -1,3 +1,12 @@
+<div class="flex">
+  <mat-checkbox class="example-margin" (change)="agragarOBorrarColumna('name')" >Name</mat-checkbox>
+  <mat-checkbox class="example-margin"(change)="agragarOBorrarColumna('surname')">Surname</mat-checkbox>
+  <mat-checkbox class="example-margin"(change)="agragarOBorrarColumna('dateOfBirth')">Date of Birth</mat-checkbox>
+  <mat-checkbox class="example-margin"(change)="agragarOBorrarColumna('curso')">curso</mat-checkbox>
+</div>
+
+
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
