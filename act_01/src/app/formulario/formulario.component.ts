@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class FormularioComponent implements OnInit {
   icono='visibility_off'
   visibilidad="password"
-
+  disabled=false
 
   ngOnInit(): void {
   }
