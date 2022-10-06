@@ -4,21 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialImportsModule } from './material-imports/material-imports.module';
-import { FormsModule } from '@angular/forms';
-import { TablaComponent } from './tabla/tabla.component';
+import { TablasComponent } from './tablas/tablas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TablaComponent
-    
+    TablasComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialImportsModule, 
-    FormsModule
-    
+    MaterialImportsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

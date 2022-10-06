@@ -1,0 +1,10 @@
+<ul>
+    <li *ngFor="let people of peopleList">{{people.name}}
+        
+        <ul>
+            <li *ngFor="let film of people.films"> {{film}}</li>
+        </ul>
+        
+    </li>
+</ul>
+
