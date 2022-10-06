@@ -7,6 +7,7 @@ import { PokemonService } from '../services/pokemon.service';
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css']
 })
+
 export class ListadoComponent implements OnInit {
 
     listadoPokemon: Pokemon[] = [];
@@ -17,6 +18,15 @@ export class ListadoComponent implements OnInit {
       this.listadoPokemon = response.results;
     });
 
+  }
+
+  modificarUrl(pokemon: Pokemon){
+    
+    
+      let array=pokemon.url.split('/')
+      let id=array[6]
+
+      return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+id+'.png'
   }
   
 

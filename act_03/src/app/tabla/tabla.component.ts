@@ -11,15 +11,28 @@ export class TablaComponent implements OnInit {
   columnsToDisplay: string[] = this.displayedColumns.slice();
   data: PeriodicElement[] = ELEMENT_DATA;
 
-  addData() {
-    const randomElementIndex = Math.floor(Math.random() * ELEMENT_DATA.length);
-    this.dataSource.push(ELEMENT_DATA[randomElementIndex]);
-    this.table.renderRows();
+  addColumn() {
+    const randomColumn = Math.floor(Math.random() * this.displayedColumns.length);
+    this.columnsToDisplay.push(this.displayedColumns[randomColumn]);
   }
 
-  removeData() {
-    this.dataSource.pop();
-    this.table.renderRows();
+  removeColumn() {
+    if (this.columnsToDisplay.length) {
+      this.columnsToDisplay.pop();
+    }
+  }
+
+  shuffle() {
+    let currentIndex = this.columnsToDisplay.length;
+    while (0 !== currentIndex) {
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // Swap
+      let temp = this.columnsToDisplay[currentIndex];
+      this.columnsToDisplay[currentIndex] = this.columnsToDisplay[randomIndex];
+      this.columnsToDisplay[randomIndex] = temp;
+    }
   }
 
 
