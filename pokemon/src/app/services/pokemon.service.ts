@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { PokemonResponse } from '../interfaces/pokemon-response.interface';
 
 
 const API_BASE_URL = 'https://pokeapi.co/api/v2'
@@ -8,7 +9,7 @@ const API_BASE_URL = 'https://pokeapi.co/api/v2'
 @Injectable({
   providedIn: 'root'
 })
-export class ServicioPokemonService {
+export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
