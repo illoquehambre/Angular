@@ -13,6 +13,7 @@ export class PeopleListComponent implements OnInit {
   peopleList: People[]=[]
   encontrado=true
   filmList:Film[]=[];
+  
   constructor(
     private peopleService: PeopleService,
     private filmService: FilmService

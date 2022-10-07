@@ -45,6 +45,7 @@ export class ListadoComponent implements OnInit {
   getPokemonInfo(pokemon: Pokemon) {
     this.pokemonService.getPokemonDetail(pokemon).subscribe(response => {
       this.pokemonSelected = response;
+      
       this.dialog.open(PokemonDialogoComponent, {
         data: {
           pokemonInfo: this.pokemonSelected,
@@ -53,6 +54,20 @@ export class ListadoComponent implements OnInit {
       });
     });
   }
+
+  infoBase(pokemon: Pokemon){
+    this.pokemonService.getPokemonDetail(pokemon).subscribe(response => {
+      this.pokemonSelected = response;
+      
+      if (pokemon.name == response.name){
+        return response.height
+      }else{
+        return null
+      }
+      
+    });
+  }
+  
   
 
 }

@@ -1,4 +1,4 @@
-import { PokemonDetailResponse } from "./pokemon-detail-response.interface";
+import { PokemonDetailResponse } from "./pokemon-data-response.interface";
 
 export interface DialogData {
   pokemonInfo: PokemonDetailResponse;
