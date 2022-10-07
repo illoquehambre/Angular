@@ -7,11 +7,13 @@ import { MaterialImportsModule } from './material-imports/material-imports.modul
 import { FormsModule } from '@angular/forms';
 import { ListadoComponent } from './listado/listado.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PokemonDialogoComponent } from './dialogos/pokemon-dialogo/pokemon-dialogo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListadoComponent
+    ListadoComponent,
+    PokemonDialogoComponent
   ],
   imports: [
     BrowserModule,

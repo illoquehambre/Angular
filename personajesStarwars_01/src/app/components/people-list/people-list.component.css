@@ -1,0 +1,8 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://starwars-visualguide.com/assets/img/characters/1.jpg');
+    background-size: cover;
+  }

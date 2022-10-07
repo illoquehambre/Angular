@@ -13,7 +13,7 @@ export class FilmService {
   constructor(private http: HttpClient) { }
 
 
-  public getFilm(id:String): Observable<FilmResponse> {
-    return this.http.get<FilmResponse>(`${API_BASE_URL}/film/${id}`);
+  public getFilms(): Observable<FilmResponse> {
+    return this.http.get<FilmResponse>(`${API_BASE_URL}/films/`);
   }
 }

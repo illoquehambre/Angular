@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonDialogoComponent } from '../dialogos/pokemon-dialogo/pokemon-dialogo.component';
 import { Pokemon } from '../interfaces/pokemon-response.interface';
 import { PokemonService } from '../services/pokemon.service';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'listado',
@@ -11,7 +13,14 @@ import { PokemonService } from '../services/pokemon.service';
 export class ListadoComponent implements OnInit {
 
     listadoPokemon: Pokemon[] = [];
-  constructor(private pokemonService: PokemonService) { }
+  constructor(
+    private pokemonService: PokemonService,
+    public dialog: MatDialog
+    ) { }
+
+    openDialog() {
+      this.dialog.open(PokemonDialogoComponent);
+    }
 
   ngOnInit(): void {
     this.pokemonService.pokemonList().subscribe(response => {
@@ -19,6 +28,8 @@ export class ListadoComponent implements OnInit {
     });
 
   }
+
+  
 
   modificarUrl(pokemon: Pokemon){
     
@@ -28,6 +39,8 @@ export class ListadoComponent implements OnInit {
 
       return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+id+'.png'
   }
+
+ 
   
 
 }
