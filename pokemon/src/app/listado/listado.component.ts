@@ -3,6 +3,7 @@ import { PokemonDialogoComponent } from '../dialogos/pokemon-dialogo/pokemon-dia
 import { Pokemon } from '../interfaces/pokemon-response.interface';
 import { PokemonService } from '../services/pokemon.service';
 import {MatDialog} from '@angular/material/dialog';
+import { PokemonDetailResponse } from '../interfaces/pokemon-data-response.interface';
 
 @Component({
   selector: 'listado',
@@ -13,6 +14,7 @@ import {MatDialog} from '@angular/material/dialog';
 export class ListadoComponent implements OnInit {
 
     listadoPokemon: Pokemon[] = [];
+    pokemonSelected: PokemonDetailResponse | undefined;
   constructor(
     private pokemonService: PokemonService,
     public dialog: MatDialog
@@ -40,7 +42,17 @@ export class ListadoComponent implements OnInit {
       return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+id+'.png'
   }
 
- 
+  getPokemonInfo(pokemon: Pokemon) {
+    this.pokemonService.getPokemonDetail(pokemon).subscribe(response => {
+      this.pokemonSelected = response;
+      this.dialog.open(PokemonDialogoComponent, {
+        data: {
+          pokemonInfo: this.pokemonSelected,
+          color: '#FF0000'
+        },
+      });
+    });
+  }
   
 
 }
