@@ -1,26 +1,30 @@
-
-
+<mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+             
+</mat-paginator>
 <mat-card class="example-card" *ngFor="let people of peopleList" >
-    <mat-card-header>
-      <div mat-card-avatar [style.background]="'url('+modificarUrlImgPer(people)+ ')'" [style.size]="'cover'"></div>
-      <mat-card-title>{{people.name}}</mat-card-title>
-      <mat-card-subtitle>{{people.birth_year}}|{{people.height}}|{{people.gender}}</mat-card-subtitle>
-      
-    </mat-card-header>
+  <mat-card-header>
+    <div mat-card-avatar [style.background]="'url('+modificarUrlImgPer(people)+ ')'" [style.size]="'cover'"></div>
+    <mat-card-title>{{people.name}}</mat-card-title>
+    <mat-card-subtitle>{{people.birth_year}}|{{people.height}}|{{people.gender}}</mat-card-subtitle>
     
-    <mat-card-content>
-        <ul>
-            <li *ngFor="let film of people.films"> 
-                
-                    {{modificarUrlPeli(film)}}
-                    <img mat-card-md-image  [src]="modificarUrlImgFilm(film)" alt="Foto">
-                
-            </li>
-        </ul>
-        
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
+  </mat-card-header>
+  
+  <mat-card-content>
+      <ul>
+          <li *ngFor="let film of people.films"> 
+              
+                  {{modificarUrlPeli(film)}}
+                  <img mat-card-md-image  [src]="modificarUrlImgFilm(film)" alt="Foto">
+              
+          </li>
+      </ul>
+      
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
