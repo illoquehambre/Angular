@@ -9,12 +9,14 @@ import { SpeciesService } from 'src/app/services/species.service';
 })
 export class PeopleListComponent implements OnInit {
   speciesList: Species[]=[]
-  numPages=0
+  numPages=0;
+
   constructor(private speciesService: SpeciesService) { }
 
   ngOnInit(): void {
     this.getSpeciesPage(1)
   }
+
   getSpeciesPage(page:number){
     this.speciesService.getSpecie(page).subscribe(resp =>{
       this.speciesList = resp.results;

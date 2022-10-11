@@ -1,8 +1,12 @@
-<ul>
 
+<p>hola</p>
     <div>
         <span *ngFor="let in of counter();let i=index"><button (click)="this.getSpeciesPage(i+1)">{{i+1}}</button></span>
     </div>
+
+
+    <ul>
+    
     <li *ngFor="let species of speciesList">
         {{species.name}}
     </li>
