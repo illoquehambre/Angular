@@ -7,7 +7,7 @@ import { SpeciesService } from 'src/app/services/species.service';
   templateUrl: './species-list.component.html',
   styleUrls: ['./species-list.component.css']
 })
-export class PeopleListComponent implements OnInit {
+export class SpeciesListComponent implements OnInit {
   speciesList: Species[]=[]
   numPages=0;
 
@@ -18,7 +18,7 @@ export class PeopleListComponent implements OnInit {
   }
 
   getSpeciesPage(page:number){
-    this.speciesService.getSpecie(page).subscribe(resp =>{
+    this.speciesService.getSpeciesListPg(page).subscribe(resp =>{
       this.speciesList = resp.results;
       this.numPages =Math.ceil(resp.count/10)
     })
@@ -26,5 +26,14 @@ export class PeopleListComponent implements OnInit {
 
   counter(){
     return new Array(this.numPages)
+  }
+  modificarUrlImgSpc(specie: Species){
+    
+    
+    let array=specie.url.split('/')
+      array=array.reverse()
+      let id=array[1]
+  
+    return 'https://starwars-visualguide.com/assets/img/species/'+id+'.jpg'
   }
 }

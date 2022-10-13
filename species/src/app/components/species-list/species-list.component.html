@@ -1,13 +1,27 @@
 
-<p>hola</p>
-    <div>
-        <span *ngFor="let in of counter();let i=index"><button (click)="this.getSpeciesPage(i+1)">{{i+1}}</button></span>
-    </div>
-
-
-    <ul>
-    
+<ul>
+ 
     <li *ngFor="let species of speciesList">
-        {{species.name}}
+      <a routerLink="/species-info/{{species.url.split('/')[5]}}">
+
+        <mat-card >
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{species.name}}</mat-card-title>
+              <mat-card-subtitle>species</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="modificarUrlImgSpc(species)" alt="Foto">
+            <mat-card-content>
+              <p></p>
+            </mat-card-content>
+            <mat-card-actions>
+            </mat-card-actions>
+          </mat-card>
+        </a>
     </li>
+
+
+    
 </ul>
+
+
