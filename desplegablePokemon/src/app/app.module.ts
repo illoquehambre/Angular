@@ -1,27 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MaterialImportsModule } from './Material-imports/material-imports.modules';
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ListadoProfesoresComponent } from './listado-profesores/listado-profesores.component';
-import { StudentsComponent } from './components/students/students.component';
-import { StorageComponent } from './storage/storage.component';
+import { ListadoComponent } from './components/listado/listado.component';
+import { MaterialImportsModule } from './modules/material-imports.module';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListadoProfesoresComponent,
-    StudentsComponent,
-    StorageComponent,
-    FormComponent
+    ListadoComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MaterialImportsModule,
     FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

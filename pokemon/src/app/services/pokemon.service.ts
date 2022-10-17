@@ -18,10 +18,7 @@ export class PokemonService {
     return this.http.get<PokemonResponse>(`${API_BASE_URL}/pokemon`)
   }
 
-  public getPokemon(id: string){
-    return this.http.get(`${API_BASE_URL}/pokemon/${id}`)
-  }
-
+ 
   public getPokemonDetail(pokemon: Pokemon): Observable<PokemonDetailResponse> {
     let id = pokemon.url.split("/").reverse()[1];
     return this.http.get<PokemonDetailResponse>(`${API_BASE_URL}/pokemon/${id}`);
