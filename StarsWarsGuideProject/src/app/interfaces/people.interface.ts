@@ -37,3 +37,8 @@ export interface DialogData {
   background: string;
   color: string;
 }
+export interface DialogData {
+  peopleInfo: People;
+  background: string;
+  color: string;
+}

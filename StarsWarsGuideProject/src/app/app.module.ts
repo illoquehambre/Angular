@@ -20,7 +20,8 @@ import { PlanetsInformationComponent } from './components/planets/planets-inform
 import { InitialPageComponent } from './components/initial-page/initial-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
-import { PeopleFormComponent } from './components/people/people-form/people-form.component';
+import { PeopleFormComponent } from './components/people/people-change-form/people-form.component';
+import { PeopleAddFormComponent } from './components/people/people-add-form/people-add-form.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PeopleFormComponent } from './components/people/people-form/people-form
     PlanetsInformationComponent,
     InitialPageComponent,
     ErrorPageComponent,
-    PeopleFormComponent
+    PeopleFormComponent,
+    PeopleAddFormComponent
   ],
   imports: [
     BrowserModule,

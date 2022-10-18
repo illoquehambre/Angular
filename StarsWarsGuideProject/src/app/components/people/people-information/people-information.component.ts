@@ -5,7 +5,7 @@ import { Planets } from 'src/app/interfaces/planets.interface';
 import { Species } from 'src/app/interfaces/species.interface';
 import { PlanetsService } from 'src/app/services/planets.service';
 import { SpeciesService } from 'src/app/services/species.service';
-import { PeopleFormComponent } from '../people-form/people-form.component';
+import { PeopleFormComponent } from '../people-change-form/people-form.component';
 
 @Component({
   selector: 'app-people-information',

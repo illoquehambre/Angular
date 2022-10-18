@@ -19,24 +19,17 @@ export class PeopleFormComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData, private speciesService: SpeciesService, private planetsService: PlanetsService) { }
 
-  fechaNacimiento=''
-  especie = ''
-  altura = ''
-  peso = ''
-  genero = ''
-  colorPelo = ''
-  colorPiel = ''
-  planeta = ''
 
-  loginFormGroup= new FormGroup({
-    fechaNacimientoFormControl: new FormControl(this.fechaNacimiento, [Validators.required]),
-    especieFormControl: new FormControl(this.especie, [Validators.required]),
-    alturaFormControl: new FormControl(this.altura, [Validators.required]),
-    pesoFormControl: new FormControl(this.peso, [Validators.required]),
-    generoFormControl: new FormControl(this.genero, [Validators.required]),
-    colorPeloFormControl: new FormControl(this.colorPelo, [Validators.required]),
-    colorPielFormControl: new FormControl(this.colorPiel, [Validators.required]),
-    planetaFormControl: new FormControl(this.planeta, [Validators.required])
+  ModalPerson: People = this.data.peopleInfo
+  FormGroup= new FormGroup({
+    fechaNacimientoFormControl: new FormControl(this.ModalPerson.birth_year, [Validators.required]),
+    especieFormControl: new FormControl(this.ModalPerson.species, [Validators.required]),
+    alturaFormControl: new FormControl(this.ModalPerson.height, [Validators.required]),
+    pesoFormControl: new FormControl(this.ModalPerson.mass, [Validators.required]),
+    generoFormControl: new FormControl(this.ModalPerson.gender, [Validators.required]),
+    colorPeloFormControl: new FormControl(this.ModalPerson.hair_color, [Validators.required]),
+    colorPielFormControl: new FormControl(this.ModalPerson.skin_color, [Validators.required]),
+    planetaFormControl: new FormControl(this.ModalPerson.homeworld, [Validators.required])
 
   })
 
@@ -45,6 +38,7 @@ export class PeopleFormComponent implements OnInit {
       this.speciesList = response.results);
     this.planetsService.getPlanetsList().subscribe(response =>
       this.planetsList = response.results);
+
   }
 
   onSubmit() {
@@ -67,5 +61,8 @@ export class PeopleFormComponent implements OnInit {
       return false;
     }
   }
+
+  
+
 
 }
