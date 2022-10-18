@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Species } from 'src/app/interfaces/species.interface';
+import { Species, SpeciesResponse } from 'src/app/interfaces/species.interface';
 import { SpeciesService } from 'src/app/services/species.service';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogData } from 'src/app/interfaces/species.interface';
 
 @Component({
   selector: 'app-species-information',
@@ -9,19 +11,12 @@ import { SpeciesService } from 'src/app/services/species.service';
   styleUrls: ['./species-information.component.css']
 })
 export class SpeciesInformationComponent implements OnInit {
-  id: string= '';
-  speciesList : Species[]=[]
-  constructor(private route: ActivatedRoute, private speciesService: SpeciesService ) { }
 
-  ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      this.id = params['id'];
-      this.speciesService.getSpeciesList().subscribe(resp =>{
-        this.speciesList = resp.results;
-      })
-    })
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
+  ngOnInit(): void { 
 
   }
+
 
 }

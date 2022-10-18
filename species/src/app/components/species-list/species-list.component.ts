@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Species } from 'src/app/interfaces/species.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { Species, SpeciesResponse } from 'src/app/interfaces/species.interface';
 import { SpeciesService } from 'src/app/services/species.service';
+import { SpeciesInformationComponent } from '../species-information/species-information.component';
 
 @Component({
   selector: 'species-list',
@@ -10,8 +12,12 @@ import { SpeciesService } from 'src/app/services/species.service';
 export class SpeciesListComponent implements OnInit {
   speciesList: Species[]=[]
   numPages=0;
+  speciesSelected: SpeciesResponse | undefined;
 
-  constructor(private speciesService: SpeciesService) { }
+  constructor(
+    private speciesService: SpeciesService,
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit(): void {
     this.getSpeciesPage(1)
@@ -35,5 +41,18 @@ export class SpeciesListComponent implements OnInit {
       let id=array[1]
   
     return 'https://starwars-visualguide.com/assets/img/species/'+id+'.jpg'
+  }
+
+  getspeciesInfo(species: Species) {
+    this.speciesService.getSpecie(species).subscribe(response => {
+      this.speciesSelected = response;
+      
+      this.dialog.open(SpeciesInformationComponent, {
+        data: {
+          speciesInfo: this.speciesSelected,
+          color: '#FF0000'
+        },
+      });
+    });
   }
 }

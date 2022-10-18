@@ -1,4 +1,8 @@
 
+<div>
+  <span *ngFor="let in of counter() ;let i = index"><button (click)="getSpeciesPage(i+1)">{{i+1}}</button>&nbsp;</span>
+</div>
+
 <ul>
  
     <li *ngFor="let species of speciesList">
@@ -15,6 +19,7 @@
               <p></p>
             </mat-card-content>
             <mat-card-actions>
+              <button mat-button (click)="getspeciesInfo(species)">+ INFO</button>
             </mat-card-actions>
           </mat-card>
         </a>

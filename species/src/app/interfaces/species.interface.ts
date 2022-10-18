@@ -29,3 +29,8 @@ export enum Designation {
     Reptilian = "reptilian",
     Sentient = "sentient",
 }
+export interface DialogData {
+    speciesInfo: Species;
+    color: string;
+  }
+  

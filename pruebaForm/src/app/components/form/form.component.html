@@ -1,8 +1,8 @@
 <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
-    <label for="email">Email: </label>
-    <input id="email" name="email" type="email" formControlName="emailFormComntrol">
-    <br>
-    <label for="password">Password: : </label>
-    <input type="password" formControlName="passwordFormComntrol">
-    <input type="submit" value="Login" [disabled]="!loginFormGroup.valid" />
+  <label for="email">Email *</label>
+  <input id="email" name="email" type="email" formControlName="emailFormControl" />
+  <br/>
+  <label for="password">Password *</label>
+  <input id="password" name="password" type="password" formControlName="passwordFormControl" />
+  <input type="submit" value="Login" [disabled]="!loginFormGroup.valid"/>
 </form>

@@ -19,7 +19,7 @@ export class SpeciesService {
   }
 
   getSpecie(specie: Species): Observable<SpeciesResponse>{
-    let id = specie.url.split('/')[5]
+    let id = specie.url.split('/').reverse()[1]
     return this.http.get<SpeciesResponse>(`${environment.API_BASE_URL}species/${id}`)
 
   }
