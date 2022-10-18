@@ -1,0 +1,35 @@
+<p>{{data.peopleInfo.name}}</p>
+<form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
+    <label for="fecha">Fecha Nacimiento: </label>
+    <input id="fecha" name="fecha" type="text" value="{{data.peopleInfo.birth_year}}" formControlName="fechaNacimientoFormControl">
+    <br>
+    <label for="especie">Especie:</label>
+
+    <span *ngFor="let species of speciesList">
+        <span *ngIf="showSpecieOfPeople(data.peopleInfo, species)">
+            <input  type="text" name="especie"   formControlName="especieFormControl">
+        </span>        
+    </span>    
+    <br>
+    <label for="altura">Altura: </label>
+    <input id="altura" name="altura" type="text"  formControlName="alturaFormControl">
+    <br>
+    <label for="Peso">Peso: </label>
+    <input type="text" name="Peso" type="text"  formControlName="pesoFormControl">
+    <br>
+    <label for="genero">Género: </label>
+    <input id="genero" name="genero" type="text"  formControlName="generoFormControl">
+    <br>
+    <label for="pelo">Color de Pelo: </label>
+    <input type="text" name="pelo" type="pelo" formControlName="colorPeloFormControl">
+    <br>
+    <label for="piel">Color de Piel: </label>
+    <input id="piel" name="piel" type="text"  formControlName="colorPielFormControl">
+    <br>
+    <label for="planeta">Planeta: </label>
+    <span *ngFor="let planet of planetsList">
+        <input *ngIf="checkHomeWorld(data.peopleInfo, planet)" type="text" name="especie"   formControlName="planetaFormControl">
+    </span>
+    <br>
+    <input type="submit" value="Login" [disabled]="!loginFormGroup.valid"/>
+</form>
