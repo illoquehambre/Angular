@@ -1,1 +1,36 @@
-<p>people-add-form works!</p>
+<form [formGroup]="FormGroup" (ngSubmit)="onSubmit()">
+    <label for="fecha">Fecha Nacimiento: </label>
+    <input id="fecha" name="fecha" type="text" formControlName="fechaNacimientoFormControl">
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label for="especie">Especie: </mat-label>
+        <mat-select formControlName="especieFormControl" multiple>
+            <mat-option *ngFor="let specie of speciesList" [value]="specie.url">{{specie.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+    <label for="altura">Altura: </label>
+    <input id="altura" name="altura" type="text"  formControlName="alturaFormControl">
+    <br>
+    <label for="Peso">Peso: </label>
+    <input type="text" name="Peso" type="text"  formControlName="pesoFormControl">
+    <br>
+    <label for="genero">Género: </label>
+    <input id="genero" name="genero" type="text"  formControlName="generoFormControl">
+    <br>
+    <label for="pelo">Color de Pelo: </label>
+    <input type="text" name="pelo" type="pelo" formControlName="colorPeloFormControl">
+    <br>
+    <label for="piel">Color de Piel: </label>
+    <input id="piel" name="piel" type="text"  formControlName="colorPielFormControl">
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label for="planeta">Planeta: </mat-label>
+        <mat-select formControlName="planetaFormControl" multiple>
+            <mat-option *ngFor="let planet of planetsList" [value]="planet.url" >{{planet.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <br>
+    <input type="submit" value="Login" [disabled]="!FormGroup.valid"/>
+</form>

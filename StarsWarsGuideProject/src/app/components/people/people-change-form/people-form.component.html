@@ -3,10 +3,12 @@
     <label for="fecha">Fecha Nacimiento: </label>
     <input id="fecha" name="fecha" type="text" value="{{data.peopleInfo.birth_year}}" formControlName="fechaNacimientoFormControl">
     <br>
-    <label for="especie">Especie:</label>
-    <mat-select multiple formControlName="speciesFormControl">
-        <mat-option *ngFor="let species of speciesList" [value]="species.url">{{species.name}}</mat-option>
-    </mat-select>
+    <mat-form-field appearance="fill">
+        <mat-label for="especie">Especie: </mat-label>
+        <mat-select formControlName="especieFormControl" multiple>
+            <mat-option *ngFor="let specie of speciesList" [value]="specie.url" [(ngModel)]="ModalPerson.species">{{specie.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
     <br>
     <label for="altura">Altura: </label>
     <input id="altura" name="altura" type="text"  formControlName="alturaFormControl">
@@ -23,12 +25,12 @@
     <label for="piel">Color de Piel: </label>
     <input id="piel" name="piel" type="text"  formControlName="colorPielFormControl">
     <br>
-    <label for="planeta">Planeta: </label>
-    <mat-select multiple>
-        <mat-select-trigger>
-        </mat-select-trigger>
-        <mat-option *ngFor="let planet of planetsList" [value]="planet.url">{{planet.name}}</mat-option>
-    </mat-select>
+    <mat-form-field appearance="fill">
+        <mat-label for="planeta">Planeta: </mat-label>
+        <mat-select formControlName="planetaFormControl" multiple>
+            <mat-option *ngFor="let planet of planetsList" [value]="planet.url" [(ngModel)]="ModalPerson.homeworld">{{planet.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
     
     <br>
     <input type="submit" value="Login" [disabled]="!FormGroup.valid"/>

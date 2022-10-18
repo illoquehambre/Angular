@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { People, PeopleResponse } from 'src/app/interfaces/people.interface';
 import { PeopleService } from 'src/app/services/people.service';
+import { PeopleAddFormComponent } from '../people-add-form/people-add-form.component';
 import { PeopleInformationComponent } from '../people-information/people-information.component';
 
 @Component({
@@ -49,5 +50,18 @@ export class PeopleListComponent implements OnInit {
         }
       })
     });
+  }
+
+  addPeople() {
+    this.dialog.open(PeopleAddFormComponent, {
+      width: '80%',
+      data: {
+        peopleInfo: undefined,
+        background: 'https://srunners.com/wp-content/uploads/2020/04/fondos-de-star-wars-min-1024x576.jpg',
+        color: '#FFF'
+      }
+      
+    })
+    
   }
 }

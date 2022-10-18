@@ -45,23 +45,7 @@ export class PeopleFormComponent implements OnInit {
     alert('se envía el formulario de login');
   }
 
-  showSpecieOfPeople(p: People, s: Species) {
-    for (let specie of p.species) {
-      if (specie == s.url) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  checkHomeWorld(pe: People, pl: Planets) {
-    if (pe.homeworld == pl.url) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
+  
   
 
 
