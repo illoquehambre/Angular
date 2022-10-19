@@ -27,7 +27,7 @@
     <br>
     <mat-form-field appearance="fill">
         <mat-label for="planeta">Planeta: </mat-label>
-        <mat-select formControlName="planetaFormControl" multiple>
+        <mat-select  formControlName="planetaFormControl"  multiple>
             <mat-option *ngFor="let planet of planetsList" [value]="planet.url" [(ngModel)]="ModalPerson.homeworld">{{planet.name}}</mat-option>
         </mat-select>
     </mat-form-field>
