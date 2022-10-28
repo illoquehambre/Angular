@@ -1,0 +1,41 @@
+
+<div class="flex">
+  <button *ngIf="actualPage>2"(click)="getPeoplePage(1)">
+    <mat-icon aria-hidden="false" aria-label="Begin" fontIcon="keyboard_double_arrow_left"></mat-icon>
+  </button>
+    <button *ngIf="actualPage>1"(click)="getPeoplePage(actualPage-1)">
+      <mat-icon aria-hidden="false" aria-label="Back" fontIcon="arrow_back_ios"></mat-icon>
+    </button>
+    
+ 
+  <div>
+    
+    {{actualPage}}
+  </div>
+     
+  <button *ngIf="actualPage<numPages" (click)="getPeoplePage(actualPage+1)">
+    <mat-icon aria-hidden="false" aria-label="Forward" fontIcon="arrow_forward_ios"></mat-icon>
+  </button>
+  <button *ngIf="actualPage<numPages-1"(click)="getPeoplePage(numPages)">
+    <mat-icon aria-hidden="false" aria-label="Begin" fontIcon="keyboard_double_arrow_right"></mat-icon>
+  </button>
+</div>
+<div class="container">
+  <mat-card class="example-card" *ngFor="let people of peopleList">
+    <mat-card-title-group>
+      <img
+        mat-card-xl-image
+        [src]="showImg(people.profile_path)"
+        onerror="this.onerror = null; this.src='https://i1.wp.com/media.giphy.com/media/8L0Pky6C83SzkzU55a/source.gif?w=525&ssl=1'"
+      />
+    </mat-card-title-group>
+    <mat-card-content>
+      {{ people.name }}
+      
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button (click)="getPeopleInfo(people)">+Info</button>
+      
+    </mat-card-actions>
+  </mat-card>  
+</div>
