@@ -1,6 +1,6 @@
 <mat-form-field appearance="fill">
     <mat-label>Select</mat-label>
-    <mat-select [(ngModel)]="pokemonSelected" (valueChange)="cogerPokemon()">
+    <mat-select [(value)]="pokemonSelected" (valueChange)="cogerPokemon()">
       <mat-option *ngFor="let pokemon of pokemonList" [value]="pokemon">{{pokemon.name}}</mat-option>
       
     </mat-select>
