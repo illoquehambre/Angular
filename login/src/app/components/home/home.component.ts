@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CreateSessionDto } from 'src/app/modules/dto/create-session.dto';
+import { DeleteSessionDto } from 'src/app/modules/dto/delete-session.dto';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -43,6 +44,17 @@ export class HomeComponent implements OnInit {
     });
   }
   
- 
+  logout() {
+    let deleteSessionDto = new DeleteSessionDto();
+    if (localStorage.getItem('session_id') != null) {
+      deleteSessionDto.session_id = localStorage.getItem('session_id')!;
+      this.authService.deleteSession(deleteSessionDto).subscribe((resp) => {
+        if (resp.success) {
+          localStorage.removeItem('session_id');
+          this.approved = false;
+        }
+      });
+    }
+  }
   
 }

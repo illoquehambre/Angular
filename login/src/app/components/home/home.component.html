@@ -20,6 +20,7 @@
     <mat-icon>login</mat-icon>
   </button>
   <button
+  (click)="logout()"
     *ngIf="approved"
     mat-icon-button
     class="example-icon"
