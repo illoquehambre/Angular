@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "proyectoangularfirebase-8f65d"
+  },
+  "targets": {
+    "proyectoangularfirebase-8f65d": {
+      "hosting": {
+        "firebaseAngular": [
+          "proyectoangularfirebase-8f65d"
+        ]
+      }
+    }
   }
 }

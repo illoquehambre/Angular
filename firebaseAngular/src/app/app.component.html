@@ -1,1 +1,8 @@
-<div>Muy buenos dias soy miguel</div>
+<div *ngIf="auth.user | async as user" class="loginDiv">
+    {{user.uid}} - {{user.email}}
+</div>
+
+<div class="loginDiv">
+    <button (click)="auth.login()">Login</button>
+</div>
+    
